@@ -1,16 +1,13 @@
 module.exports = {
-  parser: '@babel/eslint-parser',
   env: {
     browser: true,
     es2021: true,
-    'react-native/react-native': true,
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-native/all',
-    'plugin:prettier/recommended',
+    'airbnb',
+    'prettier',
   ],
   overrides: [
     {
@@ -26,13 +23,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
   },
-  plugins: ['react', 'react-native', 'prettier'],
+  plugins: ['react', 'prettier'],
   rules: {
-    'prettier/prettier': 'warn',
-    'react/prop-types': 'off',
+    'prettier/prettier': 'error',
+    'no-unused-vars': 'warn',
+    'no-console': 'off',
+    'func-names': 'off',
   },
 }
